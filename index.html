@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TodoApp</title>
+    <link rel="icon" href="https://cdn0.iconfinder.com/data/icons/education-2-27/32/user_staff_person_man_profile_boss_circle-512.png" type="image/x-icon" />
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/fonts/fontawesome-free-5.15.4-web/css/all.min.css">
+    <script src="./assets/scripts.js"></script>
+</head>
+<body>
+    <div class="wrapper">
+        <div id="mySidenav" class="sidenav">
+            <!-- close button -->
+            <button class="close-btn" onclick="closeNav()"><i class="fas fa-arrow-left"></i></button>
+            <!-- profile section -->
+            <div class="profile">
+                <div class="profile-icon">
+                    <i class="fas fa-user"></i>
+                </div>
+                <div>Nguyen Minh Tung</div>
+            </div>
+            <!-- list section -->
+            <div class="sidenav-list">
+                <ul>
+                    <li><a href=""><i class="fas fa-home"></i>Home</a></li>
+                    <li><a href=""><i class="fas fa-briefcase"></i>Business tasks</a></li>
+                    <li><a href=""><i class="fas fa-wallet"></i>Personal tasks</a></li>
+                    <li><a href=""><i class="fas fa-chart-line"></i>Analytics</a></li>
+                    <li><a href=""><i class="fas fa-screwdriver"></i>Settings</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="main-content">
+
+            <div class="topnav">
+                <div class="sidebar-btn">
+                    <button class="goto-btn" onclick="openNav()"><i class="fas fa-bars" ></i></button>
+                </div>
+                
+                <!-- SEARCH AND REMINDER BUTTON -->
+                <div class="topnav-btn">
+                    <div class="search"><a href="#"><i class="fas fa-search"></i></a></div>
+                    <div class="reminder"><a href="#"><i class="fas fa-bell"></i></a></div>
+                </div>
+            </div>
+        
+            <div class="overall-tasks">
+                <h1>TodoApp</h1>
+                <div class="business-task">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil esse consequatur, ad, tenetur corporis inventore molestiae id unde culpa nam nesciunt. Praesentium, ipsa quo. Minima cupiditate facilis aliquid eius assumenda!</p>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil esse consequatur, ad, tenetur corporis inventore molestiae id unde culpa nam nesciunt. Praesentium, ipsa quo. Minima cupiditate facilis aliquid eius assumenda!</p>
+                </div>
+                <div class="personal-task">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil esse consequatur, ad, tenetur corporis inventore molestiae id unde culpa nam nesciunt. Praesentium, ipsa quo. Minima cupiditate facilis aliquid eius assumenda!</p>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil esse consequatur, ad, tenetur corporis inventore molestiae id unde culpa nam nesciunt. Praesentium, ipsa quo. Minima cupiditate facilis aliquid eius assumenda!</p>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+    
+</body>
+</html>
