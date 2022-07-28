@@ -1,3 +1,6 @@
+
+// SIDENAV OPEN&CLOSE
+
 var mySidenav = document.getElementById("mySidenav");
 
 function openNav() {
@@ -10,3 +13,14 @@ function openNav() {
 function closeNav() {
     document.getElementById("mySidenav").style.width = "0px";
 }
+
+// OVERLAY ADDING BUTTON
+
+function on() {
+    document.getElementById("overlay").style.display = "block";
+}
+
+function off() {
+    document.getElementById("overlay").style.display = "none";
+}
+

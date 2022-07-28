@@ -9,6 +9,42 @@
     font-family: 'JoseFin Sans', sans-serif;
 }
 
+/* OVERLAY  */
+
+#overlay {
+    position: fixed; /* Sit on top of the page content */
+    display: none; /* Hidden by default */
+    width: 100%; /* Full width (cover the whole page) */
+    height: 100%; /* Full height (cover the whole page) */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #c0d3f3;
+    opacity: 1; /* Black background with opacity */
+    z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
+    cursor: pointer; /* Add a pointer on hover */
+    animation: overlayEffect 1s;
+}
+
+@keyframes overlayEffect {
+    from {
+        opacity: 0;
+        width: 0%;
+    }
+    to {
+        opacity: 1;
+        width: 100%;
+    }
+}
+
+#overlay h1 {
+    margin: 20px;
+    font-size: 40px;
+}
+
+/* WRAPPER */
+
 .wrapper {
     transition: margin-left 0.7s;
     display: flex;
@@ -26,12 +62,13 @@
     background: #A8B5E0;
     padding: 30px 0;
     display: block;
-    transition: 0.5s;
+    transition: 0.7s;
     overflow-x: hidden;  /* Hide horizontal scrollbar */
     overflow-y: hidden; /* Hide vertical scrollbar */
     z-index: 1;
     top: 0;
     display: block;
+    /* text-overflow: clip; */
     /* border-right: 1px solid #dde3ea; */
 }   
 
@@ -89,7 +126,7 @@
 .wrapper .sidebar-btn .goto-btn {
     border: none;
     outline: none;
-    font-size: 20px;
+    font-size: 25px;
     background-color: #fff;
     color: #A8B5E0;
     cursor: pointer;
@@ -115,7 +152,9 @@
 }
 
 .wrapper .topnav .topnav-btn .fas {
-    padding: 0px 5px;
+    margin-top: 1px;
+    font-size: 25px;
+    padding: 0px 7px;
     color: #A8B5E0;
 }
 
@@ -133,12 +172,15 @@
     animation: textAppear 3s 1;
     padding: 10px;
     margin: 30px 5px;
+    margin-bottom: 50px;
+    font-size: 25px;
 }
 
 .wrapper .categories {
     margin-left: 10px;
     margin-top: 10px;
     padding: 5px;
+    font-size: 25px;
     color: #A8B5E0;
 }
 
@@ -172,7 +214,9 @@
     margin: 10px;
     border-radius: 15px;
     background-color: #c0d3f3;
-    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.15) 0px 10px 10px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 5px 10px, rgba(0, 0, 0, 0.15) 0px 5px 5px;
+
+    /* box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.15) 0px 10px 10px; */
 }
 
 .wrapper .overall-tasks .business-task .task-head,
@@ -238,7 +282,74 @@
 }
 
 .wrapper .main-content .tasks-list .list-header {
+    font-size: 25px;
     padding: 10px;
     margin-top: 140px;
+    display: flex;
+    justify-content: space-between;
 }
+
+.wrapper .main-content .tasks-list .list-header .new-btn {
+    background-color: #c0d3f3;
+    color: black;
+    padding: 2px 20px;
+    border-radius: 25px;
+    border: none;
+    font-size: 30px;
+    cursor: pointer;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 5px 10px, rgba(0, 0, 0, 0.15) 0px 5px 5px;
+}
+
+.wrapper .main-content .tasks-list .list-header .task-head {
+    font-size: 25px;
+    padding: 10px;
+    padding-top: 20px;
+    margin-top: 140px;
+}
+.tasks-list .tasks .task {
+    background-color: #c0d3f3;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    margin: 10px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 5px 10px, rgba(0, 0, 0, 0.15) 0px 5px 5px;
+    border-radius: 10px;
+    margin-top: 15px;
+}
+
+.tasks-list .tasks .task .content {
+    margin-top: 9px;
+    font-size: 20px;
+    color: black;
+}
+
+.tasks-list .tasks .task .mark-btn,
+.tasks-list .tasks .task .delete-btn {
+    border: none;
+    outline: none;
+    background-color: #c0d3f3;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.tasks-list .tasks .task .actions {
+    display: flex;
+    justify-content: right;
+}
+
+.mark-btn {
+    font-size: 15px;
+    padding-top: 10px;
+    padding-right: 10px;
+}
+
+.delete-btn {
+    font-size: 30px;
+    font-weight: 200;
+    font-style: bold;
+    padding-top: 1px;
+}
+
+
+
 

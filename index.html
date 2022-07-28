@@ -11,6 +11,14 @@
     <script src="./assets/scripts.js"></script>
 </head>
 <body>
+    <div id="overlay">
+        <h1>What are you planning to do?</h1>
+        <div class="task-input">
+            <input type="text">
+            <button onclick="off() "> Add </button>
+        </div>
+    </div>
+
     <div class="wrapper">
         <div id="mySidenav" class="sidenav">
             <!-- close button -->
@@ -33,7 +41,7 @@
                 </ul>
             </div>
         </div>
-
+        
         <div class="main-content">
 
             <div class="topnav">
@@ -47,7 +55,7 @@
                     <div class="reminder"><a href="#"><i class="fas fa-bell"></i></a></div>
                 </div>
             </div>
-
+            
             <!-- HEADER -->
             <div class="header">
                 <div class="greeting">
@@ -57,7 +65,7 @@
                     Categories
                 </div>
             </div>
-            
+
             <!-- OVERALL TASKS -->
             <div class="overall-tasks">
                 <div class="business-task">
@@ -72,7 +80,7 @@
                             <i class="fas fa-briefcase"></i>
                         </div>
                     </div>
-
+                    
                     <!-- PROCESS BAR -->
                     <div class="BT-process-bar">
                         <div class="BT-process-per" per="40%" style="max-width: 40%;"></div>
@@ -96,17 +104,136 @@
                         <div class="PT-process-per" per="75%" style="max-width: 75%;"></div>
                     </div>
                 </div>
-
+                
             </div>
 
             <div class="tasks-list">
+
                 <div class="list-header">
-                    Today's tasks
+                    <div class="header-name">
+                        Today's tasks
+                    </div>
+
+                    <div class="new-btn" onclick="on()">
+                        +
+                    </div>
+                </div>
+
+                <div class="tasks">
+                    <div class="task">
+                        <div class="content">
+                            my task 1
+                        </div>
+                        <div class="actions">
+                            <div>
+                                <button class="mark-btn">
+                                    <i class="fas fa-check"></i>
+                                </button>
+                            </div>
+                            <div>
+                                
+                                <button class="delete-btn">
+                                    <i class="fas fa-xmark">&times</i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="task">
+                        <div class="content">
+                            my task 2
+                        </div>
+                        <div class="actions">
+                            <div>
+                                <button class="mark-btn">
+                                    <i class="fas fa-check"></i>
+                                </button>
+                            </div>
+                            <div>
+                                
+                                <button class="delete-btn">
+                                    <i class="fas fa-xmark">&times</i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="task">
+                        <div class="content">
+                            my task 3
+                        </div>
+                        <div class="actions">
+                            <div>
+                                <button class="mark-btn">
+                                    <i class="fas fa-check"></i>
+                                </button>
+                            </div>
+                            <div>
+                                
+                                <button class="delete-btn">
+                                    <i class="fas fa-xmark">&times</i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="task">
+                        <div class="content">
+                            my task 1
+                        </div>
+                        <div class="actions">
+                            <div>
+                                <button class="mark-btn">
+                                    <i class="fas fa-check"></i>
+                                </button>
+                            </div>
+                            <div>
+                                
+                                <button class="delete-btn">
+                                    <i class="fas fa-xmark">&times</i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="task">
+                        <div class="content">
+                            my task 2
+                        </div>
+                        <div class="actions">
+                            <div>
+                                <button class="mark-btn">
+                                    <i class="fas fa-check"></i>
+                                </button>
+                            </div>
+                            <div>
+                                
+                                <button class="delete-btn">
+                                    <i class="fas fa-xmark">&times</i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="task">
+                        <div class="content">
+                            my task 3
+                        </div>
+                        <div class="actions">
+                            <div>
+                                <button class="mark-btn">
+                                    <i class="fas fa-check"></i>
+                                </button>
+                            </div>
+                            <div>
+                                
+                                <button class="delete-btn">
+                                    <i class="fas fa-xmark">&times</i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
             
         </div>
     </div>
+    
     
 </body>
 </html>
