@@ -170,14 +170,16 @@
     display: block;
     margin-bottom: 30px;
     padding: 10px 30px;
+    font-size: 40px;
 }
 
 .wrapper .sidenav .profile .profile-icon {
-    font-size: 50px;
+    font-size: 100px;
 }
 
 .wrapper .sidenav ul li {
-    padding: 15px;
+    font-size: 25px;
+    padding: 15px 20px;
 }
 
 .wrapper .sidenav ul li a{
@@ -186,12 +188,14 @@
 }
 
 .wrapper .sidenav ul li a .fas{
+    padding-left: 20px;
+    padding-right: 40px;
     width: 25px;
 }
 
 .wrapper .sidenav ul li:hover{
     background: #c0d3f3;
-    transition: 1s;
+    transition: 0.8s;
 }
 
 /* TOPNAV */
