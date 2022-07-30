@@ -14,16 +14,12 @@
 #overlay {
     position: fixed; /* Sit on top of the page content */
     display: none; /* Hidden by default */
-    width: 100%; /* Full width (cover the whole page) */
-    height: 100%; /* Full height (cover the whole page) */
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: #c0d3f3;
-    opacity: 1; /* Black background with opacity */
+    width: 100%;
+    height: 100%; 
+    background-color: #A8B5E0;
+    opacity: 1;
     z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
-    cursor: pointer; /* Add a pointer on hover */
+    transition: 1s;
     animation: overlayEffect 1s;
 }
 
@@ -39,8 +35,89 @@
 }
 
 #overlay h1 {
+    color: white;
+    margin: 40px 20px;
+    font-size: 50px;
+    transition: 2s;
+}
+
+/* #overlay .task-type {
+    padding-right: ;
+} */
+
+#overlay .task-type {
+    margin: 0px 20px;
+    position: relative;
+    display: inline-block;
+}
+
+#overlay .task-type select{
+    color: #fff;
+    display: block; /*hide original SELECT element: */
+    background-color: #c0d3f3;
+    transition: 2s;
+    padding: 15px;
+    font-size: 20px;
+    border-radius: 15px;
+    border: none;
+    width: 320px;
+}
+
+#overlay .task-input {
     margin: 20px;
-    font-size: 40px;
+}
+
+#overlay .task-input .text-input{
+    background-color: #c0d3f3;
+    border: none;
+    font-size: 20px;
+    padding: 15px;
+    border-radius: 15px;
+    color: white;
+    margin-right: 5px;
+    /* box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset; */
+}
+
+#overlay .task-input .add-btn {
+    background-color: #c0d3f3;
+    color: white;
+    border: none;
+    font-size: 20px;
+    padding: 15px;
+    border-radius: 15px;
+    cursor: pointer;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+}
+
+#overlay .task-input .add-btn:hover {
+    opacity: 0.8;
+    animation: glowUp 1s ease-in-out;
+}
+
+@keyframes glowUP {
+    0%{
+        box-shadow: 
+        0 0 20px white,
+        0 0 50px rgb(255, 255, 255);
+    }
+}
+
+#overlay .task-input .add-btn:active {
+    opacity: 0.9    ;
+}
+
+#overlay .close-overlay-btn .close-btn {
+    border: none;
+    outline: none;
+    position: absolute;
+    top: 7px;
+    right: 15px;
+    font-size: 25px;
+    margin-top: 5px;
+    margin-left: 0px;
+    color: #fff;
+    background-color: #A8B5E0;
+    cursor: pointer;
 }
 
 /* WRAPPER */
@@ -73,6 +150,7 @@
 }   
 
 .sidenav .close-btn {
+    margin-top: 5px;
     position: absolute;
     top: 7px;
     right: 15px;
@@ -214,7 +292,8 @@
     margin: 10px;
     border-radius: 15px;
     background-color: #c0d3f3;
-    box-shadow: rgba(0, 0, 0, 0.1) 0px 5px 10px, rgba(0, 0, 0, 0.15) 0px 5px 5px;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+    /* box-shadow: rgba(0, 0, 0, 0.1) 0px 5px 10px, rgba(0, 0, 0, 0.15) 0px 5px 5px; */
 
     /* box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.15) 0px 10px 10px; */
 }
@@ -297,7 +376,16 @@
     border: none;
     font-size: 30px;
     cursor: pointer;
-    box-shadow: rgba(0, 0, 0, 0.1) 0px 5px 10px, rgba(0, 0, 0, 0.15) 0px 5px 5px;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+    /* box-shadow: rgba(0, 0, 0, 0.1) 0px 5px 10px, rgba(0, 0, 0, 0.15) 0px 5px 5px; */
+}
+
+.wrapper .main-content .tasks-list .list-header .new-btn:hover {
+    opacity: 0.8;
+}
+
+.wrapper .main-content .tasks-list .list-header .new-btn:active {
+    opacity: 0.9;
 }
 
 .wrapper .main-content .tasks-list .list-header .task-head {
@@ -306,25 +394,36 @@
     padding-top: 20px;
     margin-top: 140px;
 }
-.tasks-list .tasks .task {
+.tasks-list .tasks #task {
     background-color: #c0d3f3;
     padding: 15px;
     display: flex;
     justify-content: space-between;
     margin: 10px;
-    box-shadow: rgba(0, 0, 0, 0.1) 0px 5px 10px, rgba(0, 0, 0, 0.15) 0px 5px 5px;
+    /* box-shadow: rgba(0, 0, 0, 0.1) 0px 5px 10px, rgba(0, 0, 0, 0.15) 0px 5px 5px; */
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
     border-radius: 10px;
     margin-top: 15px;
 }
 
-.tasks-list .tasks .task .content {
+.tasks-list .tasks #task:hover {
+    opacity: 0.8;
+    cursor: pointer;
+}
+
+.tasks-list .tasks #task:active {
+    opacity: 0.9;
+}
+
+.tasks-list .tasks #task .task-content {
+    /* text-decoration: line-through; */
     margin-top: 9px;
     font-size: 20px;
     color: black;
 }
 
-.tasks-list .tasks .task .mark-btn,
-.tasks-list .tasks .task .delete-btn {
+.tasks-list .tasks #task .mark-btn,
+.tasks-list .tasks #task .delete-btn {
     border: none;
     outline: none;
     background-color: #c0d3f3;
@@ -332,16 +431,16 @@
     cursor: pointer;
 }
 
-.tasks-list .tasks .task .actions {
+.tasks-list .tasks #task .actions {
     display: flex;
     justify-content: right;
 }
-
+/* 
 .mark-btn {
     font-size: 15px;
     padding-top: 10px;
     padding-right: 10px;
-}
+} */
 
 .delete-btn {
     font-size: 30px;
@@ -349,6 +448,7 @@
     font-style: bold;
     padding-top: 1px;
 }
+
 
 
 
