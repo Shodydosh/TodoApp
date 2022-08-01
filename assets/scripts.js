@@ -23,76 +23,48 @@ function off() {
     document.getElementById("overlay").style.display = "none";
 }
 
-//
-// ADDING TASK FUNCTION
+// #overlay .task-input .text-input{
 
-// let btnAddTask = document.querySelector('.add-btn');
-// let taskName = document.querySelector('#text-input')
+let btnAddTask = document.getElementById('add-btn')
+let taskName = document.querySelector(".text-input");
 
-// btnAddTask.addEventListener('click', function() {
-//     if(!taskName.value){
-//         alert('Vui long');
-//         return false;
-//     }
-//     else{
-//         off();
-//     }
-// })
+btnAddTask.addEventListener('click', function() {
+    console.log('btn clicked');
+    if(!taskName.value) {
+        alert('Hãy nhập task ở bên dưới')
+        return false;
+    }
 
-// function mark() {
-//     document.getElementById("task-line").style.textDecoration = "line-through";
-// }
+    let tasks = []
+    tasks.push({ name: taskName.value })
+    console.log(tasks)
+    taskName.value = ''
 
-// function unmark() {
-//     document.getElementById("task-line").style.textDecoration = "none";
-// }
+    renderTasks(tasks)
+})
+ 
+function renderTasks(tasks = []){
+    let content = '<ul>'
 
-//
-// CHECKED FUNCTION
+    tasks.forEach((task) => {
 
+        content += `<li>
+                <div id="task" onclick="">
+                    <div class="task-content" id="task-line">
+                        ${task.name}
+                    </div>
+                    <div class="actions">
+                        <div>
+                            <button class="delete-btn">
+                                <i class="fas fa-xmark">&times</i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </li>`
+    })
 
-// SELECTORS
+    content += '</ul>'
 
-// const taskInput = document.querySelector(".task-input");
-// const taskSubmit = document.querySelector(".add-btn");
-// const taskList = document.querySelector(".tasks");
-
-// // Event listeners
-
-// taskSubmit.addEventListener('click', addNewTask);
-
-// // Functions
-
-// function addNewTask(event){
-//     event.preventDefault();
-
-    
-//     if(taskInput.value === '') alert("You must write something!!");
-//     else{
-//         const taskDiv = document.createElement("div");
-//         taskDiv.classList.add("task");
-//             // create LI
-//         const newtask = document.createElement("div");
-//         newtask.innerText = taskInput.value;
-//         taskInput.value = '';
-//         newtask.classList.add('task-item');
-//         newtask.id.add('task-line');
-
-//         taskDiv.appendChild(newtask);
-
-//         const action = document.createElement("div");
-//         action.classList.add("actions");
-
-//         // check delete button
-//         const deleteButton = document.createElement('button');
-//         deleteButton.innerHTML = '<i class="fas fa-xmark">&times</i>';
-//         deleteButton.classList.add("delete-btn");
-//         action.appendChild(deleteButton);
-
-//         taskDiv.appendChild(action);
-//         // append to list 
-//         taskList.appendChild(taskDiv);
-//         off();
-//     }
-    
-// }
+    document.querySelector('#result').innerHTML = content
+}

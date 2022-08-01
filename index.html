@@ -8,7 +8,6 @@
     <link rel="icon" href="https://cdn0.iconfinder.com/data/icons/education-2-27/32/user_staff_person_man_profile_boss_circle-512.png" type="image/x-icon" />
     <link rel="stylesheet" href="./assets/css/style.css">
     <link rel="stylesheet" href="./assets/fonts/fontawesome-free-5.15.4-web/css/all.min.css">
-    <script src="./assets/scripts.js"></script>
 </head>
 <body>
     <div id="overlay">
@@ -24,9 +23,9 @@
 
         <div class="task-input">
             <input class="text-input" id="text-input" type="text" placeholder="Type here...">
-            <!-- <button class="add-btn"> Add </button> -->
+            <button class="add-btn" id="add-btn"> Add </button>
 
-            <button onclick="off()" class="add-btn"> Add </button>
+            <!-- <button onclick="off()" class="add-btn"> Add </button> -->
         </div>
         <div class="close-overlay-btn">
             <button class="close-btn" onclick="off()"><i class="fas fa-arrow-left"></i></button>
@@ -134,124 +133,36 @@
                         +
                     </div>
                 </div>
+                
+                <div id="result">
+                    <p>Chưa có task nào</p>
 
-                <div class="tasks">
-
-                    <div id="task" onclick="">
-                        <div class="task-content" id="task-line">
-                            my task 1
-                        </div>
-                        <div class="actions">
-                            <!-- <div>
-                                <button class="mark-btn" onclick="mark()">
-                                    <i class="fas fa-check"></i>
-                                </button>
-                            </div> -->
-                            <div>
-                                
-                                <button class="delete-btn">
-                                    <i class="fas fa-xmark">&times</i>
-                                </button>
+                    <!-- <ul class="tasks">
+                        
+                        <li>
+                            <div id="task" onclick="">
+                                <div class="task-content" id="task-line">
+                                    my task 1
+                                </div>
+                                <div class="actions">
+                                    <div>
+                                        
+                                        <button class="delete-btn">
+                                            <i class="fas fa-xmark">&times</i>
+                                        </button>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                    <div id="task" onclick="">
-                        <div class="task-content" id="task-line">
-                            my task 1
-                        </div>
-                        <div class="actions">
-                            <!-- <div>
-                                <button class="mark-btn" onclick="mark()">
-                                    <i class="fas fa-check"></i>
-                                </button>
-                            </div> -->
-                            <div>
-                                
-                                <button class="delete-btn">
-                                    <i class="fas fa-xmark">&times</i>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                    <div id="task" onclick="">
-                        <div class="task-content" id="task-line">
-                            my task 1
-                        </div>
-                        <div class="actions">
-                            <!-- <div>
-                                <button class="mark-btn" onclick="mark()">
-                                    <i class="fas fa-check"></i>
-                                </button>
-                            </div> -->
-                            <div>
-                                
-                                <button class="delete-btn">
-                                    <i class="fas fa-xmark">&times</i>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                    <div id="task" onclick="">
-                        <div class="task-content" id="task-line">
-                            my task 1
-                        </div>
-                        <div class="actions">
-                            <!-- <div>
-                                <button class="mark-btn" onclick="mark()">
-                                    <i class="fas fa-check"></i>
-                                </button>
-                            </div> -->
-                            <div>
-                                
-                                <button class="delete-btn">
-                                    <i class="fas fa-xmark">&times</i>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                    <div id="task" onclick="">
-                        <div class="task-content" id="task-line">
-                            my task 1
-                        </div>
-                        <div class="actions">
-                            <!-- <div>
-                                <button class="mark-btn" onclick="mark()">
-                                    <i class="fas fa-check"></i>
-                                </button>
-                            </div> -->
-                            <div>
-                                
-                                <button class="delete-btn">
-                                    <i class="fas fa-xmark">&times</i>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                    <div id="task" onclick="">
-                        <div class="task-content" id="task-line">
-                            my task 1
-                        </div>
-                        <div class="actions">
-                            <!-- <div>
-                                <button class="mark-btn" onclick="mark()">
-                                    <i class="fas fa-check"></i>
-                                </button>
-                            </div> -->
-                            <div>
-                                
-                                <button class="delete-btn">
-                                    <i class="fas fa-xmark">&times</i>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                    
+                        </li>
+                        
+                    </ul> -->
                 </div>
+                
             </div>
             
         </div>
     </div>
     
-    
+    <script src="./assets/scripts.js"></script>  
 </body>
 </html>
