@@ -28,6 +28,10 @@ function off() {
 let btnAddTask = document.getElementById('add-btn')
 let taskName = document.querySelector(".text-input");
 
+let tasks = getTaskFromLocalStorage();
+
+renderTasks(tasks);
+
 btnAddTask.addEventListener('click', function() {
     console.log('btn clicked');
     if(!taskName.value) {
@@ -35,36 +39,68 @@ btnAddTask.addEventListener('click', function() {
         return false;
     }
 
-    let tasks = []
+    // Kiem tra xem local storage co task chua, neu 0 thi cho bang mang rong
+    // JSON.parse de convert du lieu -> array
+    let tasks = getTaskFromLocalStorage();
+
     tasks.push({ name: taskName.value })
-    console.log(tasks)
     taskName.value = ''
+
+    // ham convert tasks sang string
+    localStorage.setItem('tasks', JSON.stringify(tasks))
 
     renderTasks(tasks)
 })
- 
+
+function getTaskFromLocalStorage() {
+    
+    // neu tasks co thi parse -> array
+    return localStorage.getItem('tasks') ? JSON.parse(localStorage.getItem('tasks')) : []
+}
+
+function markedTask(id){
+    
+}
+
+function deleteTask(id){
+    if(confirm('mun xoa 0')){
+        // lay tasks tu storage
+        let tasks = getTaskFromLocalStorage()
+        
+        // xoa tasks o vi tri id
+        tasks.splice(id, 1)
+        
+        // ghi tasks lai vao trong localStorage
+        localStorage.setItem('tasks', JSON.stringify(tasks))
+        
+        //chay lai giao dien
+        renderTasks();
+    }
+}
+
 function renderTasks(tasks = []){
-    let content = '<ul>'
+   let content = '<ul class="tasks">'
 
-    tasks.forEach((task) => {
+   tasks.forEach((task, index) => {
 
-        content += `<li>
-                <div id="task" onclick="">
-                    <div class="task-content" id="task-line">
-                        ${task.name}
-                    </div>
-                    <div class="actions">
-                        <div>
-                            <button class="delete-btn">
-                                <i class="fas fa-xmark">&times</i>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </li>`
-    })
+       content += `<li>
+               <div id="task" onclick="markedTask(${index})">
+                   <div class="task-content" id="task-line">
+                       ${task.name}
+                   </div>
+                   <div class="actions">
+                       <div>
+                           <button class="delete-btn" onclick="deleteTask(${index})">
+                               <i class="fas fa-xmark">&times</i>
+                           </button>
+                       </div>
+                   </div>
+               </div>
+           </li>`
+           
+   })
 
-    content += '</ul>'
+   content += '</ul>'
 
-    document.querySelector('#result').innerHTML = content
+   document.querySelector('#result').innerHTML = content
 }
