@@ -59,7 +59,6 @@ function getTaskFromLocalStorage() {
     return localStorage.getItem('tasks') ? JSON.parse(localStorage.getItem('tasks')) : []
 }
 
-function markedTask(id){
 // function markedTask(id){
 //     let tasks = getTaskFromLocalStorage()
 
