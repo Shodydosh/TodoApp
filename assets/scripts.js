@@ -35,7 +35,7 @@ renderTasks(tasks);
 btnAddTask.addEventListener('click', function() {
     console.log('btn clicked');
     if(!taskName.value) {
-        alert('Hãy nhập task ở bên dưới')
+        alert('Hãy nhập task ở bên dưới!!!')
         return false;
     }
 
@@ -49,6 +49,7 @@ btnAddTask.addEventListener('click', function() {
     // ham convert tasks sang string
     localStorage.setItem('tasks', JSON.stringify(tasks))
 
+    off()
     renderTasks(tasks)
 })
 
@@ -59,11 +60,17 @@ function getTaskFromLocalStorage() {
 }
 
 function markedTask(id){
-    
-}
+// function markedTask(id){
+//     let tasks = getTaskFromLocalStorage()
+
+//     const todo = tasks[id].parentElement;
+
+//     renderTasks(tasks);
+// }
 
 function deleteTask(id){
-    if(confirm('mun xoa 0')){
+    // if(confirm('mun xoa 0 z??')){
+
         // lay tasks tu storage
         let tasks = getTaskFromLocalStorage()
         
@@ -74,33 +81,55 @@ function deleteTask(id){
         localStorage.setItem('tasks', JSON.stringify(tasks))
         
         //chay lai giao dien
-        renderTasks();
-    }
+        renderTasks(tasks);
+    // }
 }
 
 function renderTasks(tasks = []){
-   let content = '<ul class="tasks">'
 
-   tasks.forEach((task, index) => {
+    // if(localStorage.getItem('tasks') === []){
+    //     let content = '<p>Chưa có task nào</p>'
+    // }
+    // else {
+        let content = '<ul class="tasks">'
 
-       content += `<li>
-               <div id="task" onclick="markedTask(${index})">
-                   <div class="task-content" id="task-line">
-                       ${task.name}
-                   </div>
-                   <div class="actions">
-                       <div>
-                           <button class="delete-btn" onclick="deleteTask(${index})">
-                               <i class="fas fa-xmark">&times</i>
-                           </button>
-                       </div>
-                   </div>
-               </div>
-           </li>`
-           
-   })
+        tasks.forEach((task, index) => {
 
-   content += '</ul>'
+        content += `<li>
+                <div id="task" onclick="markedTask(${index})">
+                    <div class="task-content" id="task-line">
+                        ${task.name}
+                    </div>
+                    <div class="actions">
+                        <div>
+                            <button class="delete-btn" onclick="deleteTask(${index})">
+                                <i class="fas fa-xmark">&times</i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </li>`
 
-   document.querySelector('#result').innerHTML = content
+        })
+
+        content += '</ul>'
+    // }
+
+   
+
+    document.querySelector('#result').innerHTML = content
 }
+
+// ADDING TOAST MSG & DELETING TOAST MSG
+
+const button = document.getElementById('add-btn')
+const toast = document.querySelector('.toast')
+const closeToastBtn = document.querySelector('.close')
+
+button.addEventListener('click', () =>{
+    toast.classList.add('active');
+})
+
+closeToastBtn.addEventListener('click', () =>{
+    toast.classList.remove('active');
+})
