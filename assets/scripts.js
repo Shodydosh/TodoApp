@@ -95,7 +95,7 @@ function renderTasks(tasks = []){
         tasks.forEach((task, index) => {
 
         content += `<li>
-                <div id="task" onclick="markedTask(${index})">
+                <div id="task" onclick="">
                     <div class="task-content" id="task-line">
                         ${task.name}
                     </div>
@@ -125,10 +125,27 @@ const button = document.getElementById('add-btn')
 const toast = document.querySelector('.toast')
 const closeToastBtn = document.querySelector('.close')
 
+const toastDelete = document.querySelector('.toast-delete')
+// const closeToastDeleteBtn = document.querySelector('')
+const taskDeleteBtn = document.querySelector('.delete-btn')
+
 button.addEventListener('click', () =>{
     toast.classList.add('active');
+
+    setTimeout(() =>{
+        toast.classList.remove('active');
+    }, 3000)
+})
+
+taskDeleteBtn.addEventListener('click', () =>{
+    toastDelete.classList.add('active');
+
+    setTimeout(() =>{
+        toastDelete.classList.remove('active');
+    }, 3000)
 })
 
 closeToastBtn.addEventListener('click', () =>{
     toast.classList.remove('active');
+    toastDelete.classList.remove('active');
 })
