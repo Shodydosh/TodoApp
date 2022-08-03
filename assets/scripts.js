@@ -41,21 +41,23 @@ btnAddTask.addEventListener('click', function() {
 
     // Kiem tra xem local storage co task chua, neu 0 thi cho bang mang rong
     // JSON.parse de convert du lieu -> array
-    let tasks = getTaskFromLocalStorage();
-
-    tasks.push({ name: taskName.value })
-    taskName.value = ''
-
-    // ham convert tasks sang string
-    localStorage.setItem('tasks', JSON.stringify(tasks))
 
     var selectedValue = document.getElementById("type").value;
 
-
     if(selectedValue === 'hide'){
-        console.log("hide")
+        alert('Please choose the type of task')
+        // console.log("hide")
+        return false;
     }
     else{
+        let tasks = getTaskFromLocalStorage();
+
+        tasks.push({ name: taskName.value })
+        taskName.value = ''
+
+        // ham convert tasks sang string
+        localStorage.setItem('tasks', JSON.stringify(tasks))
+
         off()
         renderTasks(tasks)
         getSelectValue()
@@ -173,6 +175,7 @@ function getSelectValue() {
     var selectedValue = document.getElementById("type").value;
     if(selectedValue === 'hide'){
         alert('Please choose the type of task')
+        return;
     }
     else{
         console.log(selectedValue)
