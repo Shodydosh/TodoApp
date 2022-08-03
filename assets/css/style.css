@@ -19,7 +19,7 @@
     background-color: #A8B5E0;
     opacity: 1;
     z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
-    transition: 1s;
+    transition: 0.7s;
     animation: overlayEffect 1s;
 }
 
@@ -485,7 +485,7 @@
 /* TOAST MESSAGE */
 
 .toast, 
-.toast-delete{
+.toast-delete {
     position: absolute;
     top: 25px;
     right: 30px;
@@ -493,7 +493,7 @@
     background: #fff;
     /* background: #fff; */
     padding: 20px 35px 20px 25px;
-    z-index: 3;
+    z-index: 2;
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
     border-left: 4px solid #A8B5E0;
     transition: all 2s cubic-bezier(0.68, -0.55, 0.265, 1.35);
@@ -561,7 +561,7 @@
 }
 
 .toast .toast-content .close,
-.toast-delete .toast-delete-content .close {
+.toast-delete .toast-delete-content .delete-close {
     position: absolute;
     top: 5px;
     right: 7px;
@@ -571,7 +571,7 @@
 }
 
 .toast .toast-content .close:hover,
-.toast-delete .toast-delete-content .close:hover {
+.toast-delete .toast-delete-content .delete-close:hover {
     opacity: 1;
 }
 

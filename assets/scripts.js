@@ -84,50 +84,65 @@ function deleteTask(id){
     // }
 }
 
-function renderTasks(tasks = []){
-
-    // if(localStorage.getItem('tasks') === []){
-    //     let content = '<p>Chưa có task nào</p>'
-    // }
-    // else {
-        let content = '<ul class="tasks">'
-
-        tasks.forEach((task, index) => {
-
-        content += `<li>
-                <div id="task" onclick="">
-                    <div class="task-content" id="task-line">
-                        ${task.name}
-                    </div>
-                    <div class="actions">
-                        <div>
-                            <button class="delete-btn" onclick="deleteTask(${index})">
-                                <i class="fas fa-xmark">&times</i>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </li>`
-
-        })
-
-        content += '</ul>'
-    // }
-
-   
-
-    document.querySelector('#result').innerHTML = content
-}
-
 // ADDING TOAST MSG & DELETING TOAST MSG
 
 const button = document.getElementById('add-btn')
 const toast = document.querySelector('.toast')
 const closeToastBtn = document.querySelector('.close')
 
-const toastDelete = document.querySelector('.toast-delete')
 // const closeToastDeleteBtn = document.querySelector('')
-const taskDeleteBtn = document.querySelector('.delete-btn')
+
+function renderTasks(tasks = []){
+    
+    // if(localStorage.getItem('tasks') === []){
+        //     let content = '<p>Chưa có task nào</p>'
+        // }
+        // else {
+            let content = '<ul class="tasks">'
+            
+            tasks.forEach((task, index) => {
+                
+                content += `<li>
+                <div id="task" onclick="">
+                <div class="task-content" id="task-line">
+                ${task.name}
+                </div>
+                <div class="actions">
+                <div>
+                <button class="delete-btn" onclick="deleteTask(${index})">
+                <i class="fas fa-xmark">&times</i>
+                </button>
+                </div>
+                </div>
+                </div>
+                </li>`
+                
+            })
+            
+            content += '</ul>'
+            // }
+            
+            document.querySelector('#result').innerHTML = content
+            
+            const taskDeleteBtn = document.querySelector('.delete-btn')
+            const toastDelete = document.querySelector('.toast-delete')
+            const closeToastBtn = document.querySelector('.delete-close')
+
+            if(taskDeleteBtn){
+                taskDeleteBtn.addEventListener('click', () =>{
+                    toastDelete.classList.add('active');
+                    
+                    setTimeout(() =>{
+                toastDelete.classList.remove('active');
+            }, 3000)
+
+            closeToastBtn.addEventListener('click', () =>{
+                toastDelete.classList.remove('active');
+            })
+        })
+    }
+}
+
 
 button.addEventListener('click', () =>{
     toast.classList.add('active');
@@ -137,15 +152,6 @@ button.addEventListener('click', () =>{
     }, 3000)
 })
 
-taskDeleteBtn.addEventListener('click', () =>{
-    toastDelete.classList.add('active');
-
-    setTimeout(() =>{
-        toastDelete.classList.remove('active');
-    }, 3000)
-})
-
 closeToastBtn.addEventListener('click', () =>{
     toast.classList.remove('active');
-    toastDelete.classList.remove('active');
 })
