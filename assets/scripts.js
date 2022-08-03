@@ -49,8 +49,11 @@ btnAddTask.addEventListener('click', function() {
     // ham convert tasks sang string
     localStorage.setItem('tasks', JSON.stringify(tasks))
 
-    off()
+    if(selectedValue !== 'hide'){
+        off()
+    }
     renderTasks(tasks)
+    getSelectValue()
 })
 
 function getTaskFromLocalStorage() {
@@ -155,3 +158,19 @@ button.addEventListener('click', () =>{
 closeToastBtn.addEventListener('click', () =>{
     toast.classList.remove('active');
 })
+
+
+/// SELECT
+var selectedValue = document.getElementById("type").value;
+
+function getSelectValue() {
+    var selectedValue = document.getElementById("type").value;
+    if(selectedValue === 'hide'){
+        alert('hay chon loai task')
+    }
+    else{
+        console.log(selectedValue)
+    }
+}
+
+ // CHECK SELECT

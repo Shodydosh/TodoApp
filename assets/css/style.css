@@ -496,16 +496,25 @@
     z-index: 2;
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
     border-left: 4px solid #A8B5E0;
-    transition: all 2s cubic-bezier(0.68, -0.55, 0.265, 1.35);
+    transition: fadeOut linear 1s 2s;
     /* border-left: 6px solid #fff; */
     /* justify-content: center; */
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 100%;
+    }
+    to {
+        opacity: 0;
+    }
 }
 
 .toast,
 .toast-delete{
     /* transform: translateX(calc(100% + 30px)); */
     transition-delay: 2s;
-    animation: toastAppear 1s 1;
+    animation: toastAppear 1s 1, fadeOut linear 1s 2s;
     display: none;
 }
 
