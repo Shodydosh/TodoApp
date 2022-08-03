@@ -49,11 +49,17 @@ btnAddTask.addEventListener('click', function() {
     // ham convert tasks sang string
     localStorage.setItem('tasks', JSON.stringify(tasks))
 
-    if(selectedValue !== 'hide'){
-        off()
+    var selectedValue = document.getElementById("type").value;
+
+
+    if(selectedValue === 'hide'){
+        console.log("hide")
     }
-    renderTasks(tasks)
-    getSelectValue()
+    else{
+        off()
+        renderTasks(tasks)
+        getSelectValue()
+    }
 })
 
 function getTaskFromLocalStorage() {
@@ -166,7 +172,7 @@ var selectedValue = document.getElementById("type").value;
 function getSelectValue() {
     var selectedValue = document.getElementById("type").value;
     if(selectedValue === 'hide'){
-        alert('hay chon loai task')
+        alert('Please choose the type of task')
     }
     else{
         console.log(selectedValue)
