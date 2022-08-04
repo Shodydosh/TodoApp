@@ -389,7 +389,7 @@
     /* box-shadow: rgba(0, 0, 0, 0.1) 0px 5px 10px, rgba(0, 0, 0, 0.15) 0px 5px 5px; */
 }
 
-.wrapper .main-content .tasks-list .list-header .new-btn:hov er {
+.wrapper .main-content .tasks-list .list-header .new-btn:hover {
     opacity: 0.8;
 }
 
@@ -431,7 +431,7 @@
 
 .tasks-list .tasks #task:hover {
     opacity: 0.8;
-    cursor: pointer;
+    /* cursor: pointer; */
 }
 
 .tasks-list .tasks #task:active {
@@ -446,6 +446,12 @@
     color: black;
     text-overflow: ellipsis;
     overflow: hidden;
+    cursor: pointer;
+}
+
+.tasks-list .tasks .marked {
+    text-decoration: line-through;
+    opacity: 0.4;
 }
 
 .tasks-list .tasks #task .mark-btn,
