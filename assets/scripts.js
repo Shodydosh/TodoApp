@@ -32,9 +32,9 @@ let tasks = getTaskFromLocalStorage();
 
 renderTasks(tasks);
 
-btnAddTask.addEventListener('click', function() {
+btnAddTask.addEventListener('click', function () {
     console.log('btn clicked');
-    if(!taskName.value) {
+    if (!taskName.value) {
         alert('Hãy nhập task ở bên dưới!!!')
         return false;
     }
@@ -44,12 +44,12 @@ btnAddTask.addEventListener('click', function() {
 
     var selectedValue = document.getElementById("type").value;
 
-    if(selectedValue === 'hide'){
+    if (selectedValue === 'hide') {
         alert('Please choose the type of task')
         // console.log("hide")
         return false;
     }
-    else{
+    else {
         let tasks = getTaskFromLocalStorage();
 
         tasks.push({ name: taskName.value })
@@ -65,7 +65,7 @@ btnAddTask.addEventListener('click', function() {
 })
 
 function getTaskFromLocalStorage() {
-    
+
     // neu tasks co thi parse -> array
     return localStorage.getItem('tasks') ? JSON.parse(localStorage.getItem('tasks')) : []
 }
@@ -78,20 +78,20 @@ function getTaskFromLocalStorage() {
 //     renderTasks(tasks);
 // }
 
-function deleteTask(id){
+function deleteTask(id) {
     // if(confirm('mun xoa 0 z??')){
 
-        // lay tasks tu storage
-        let tasks = getTaskFromLocalStorage()
-        
-        // xoa tasks o vi tri id
-        tasks.splice(id, 1)
-        
-        // ghi tasks lai vao trong localStorage
-        localStorage.setItem('tasks', JSON.stringify(tasks))
-        
-        //chay lai giao dien
-        renderTasks(tasks);
+    // lay tasks tu storage
+    let tasks = getTaskFromLocalStorage()
+
+    // xoa tasks o vi tri id
+    tasks.splice(id, 1)
+
+    // ghi tasks lai vao trong localStorage
+    localStorage.setItem('tasks', JSON.stringify(tasks))
+
+    //chay lai giao dien
+    renderTasks(tasks);
     // }
 }
 
@@ -103,18 +103,17 @@ const closeToastBtn = document.querySelector('.close')
 
 // const closeToastDeleteBtn = document.querySelector('')
 
-function renderTasks(tasks = []){
-    
+function renderTasks(tasks = []) {
+
     // if(localStorage.getItem('tasks') === []){
-        //     let content = '<p>Chưa có task nào</p>'
-        // }
-        // else {
-            let content = '<ul class="tasks">'
-            
-            tasks.forEach((task, index) => {
-                
-                content += `<li>
-                    <div id="task" onclick="">
+    //     let content = '<p>Chưa có task nào</p>'
+    // }
+    // else {
+    let content = '<ul class="tasks">'
+
+    tasks.forEach((task, index) => {
+        content += `<li>
+                    <div class="taskItem" onclick="">
                         <div class="task-content" id="task-line">
                         ${task.name}
                         </div>
@@ -127,44 +126,54 @@ function renderTasks(tasks = []){
                         </div>
                     </div>
                 </li>`
-                
-            })
-            
-            content += '</ul>'
-            // }
-            
-            document.querySelector('#result').innerHTML = content
-            
-            const taskDeleteBtn = document.querySelector('.delete-btn')
-            // const taskDeleteBtn = document.getElementsByClassName('delete-btn')
-            const toastDelete = document.querySelector('.toast-delete')
-            const closeToastBtn = document.querySelector('.delete-close')
 
-            if(taskDeleteBtn){
-                taskDeleteBtn.addEventListener('click', () =>{
-                    toastDelete.classList.add('active');
-                    
-                    setTimeout(() =>{
+    })
+
+    content += '</ul>'
+    // }
+
+    document.querySelector('#result').innerHTML = content
+
+    const toastDelete = document.querySelector('.toast-delete')
+    const closeToastBtn = document.querySelector('.delete-close')
+    const taskDeleteBtn = document.querySelectorAll('.delete-btn')
+
+    for (let i = 0; i < taskDeleteBtn.length; i++) {
+        taskDeleteBtn[i].addEventListener("click", function () {
+            toastDelete.classList.add('active');
+
+            setTimeout(() => {
                 toastDelete.classList.remove('active');
             }, 3000)
 
-            closeToastBtn.addEventListener('click', () =>{
+            closeToastBtn.addEventListener('click', () => {
                 toastDelete.classList.remove('active');
             })
+        })
+    }
+    
+    // MARKED TASK 
+
+    const taskMark = document.querySelectorAll('.taskItem');
+
+    for (let i = 0; i < taskMark.length; i++) {
+        taskMark[i].addEventListener("click", function () {
+            console.log("clicked");
+            taskMark[i].classList.toggle("marked");
         })
     }
 }
 
 
-button.addEventListener('click', () =>{
+button.addEventListener('click', () => {
     toast.classList.add('active');
 
-    setTimeout(() =>{
+    setTimeout(() => {
         toast.classList.remove('active');
     }, 3000)
 })
 
-closeToastBtn.addEventListener('click', () =>{
+closeToastBtn.addEventListener('click', () => {
     toast.classList.remove('active');
 })
 
@@ -174,21 +183,22 @@ var selectedValue = document.getElementById("type").value;
 
 function getSelectValue() {
     var selectedValue = document.getElementById("type").value;
-    if(selectedValue === 'hide'){
+    if (selectedValue === 'hide') {
         alert('Please choose the type of task')
         return;
     }
-    else{
+    else {
         console.log(selectedValue)
     }
 }
 
- // MARKED TASK 
+ // MARKED TASK
 
-const taskMark = document.querySelectorAll('#task');
+// const taskMark = document.querySelectorAll('.taskItem');
 
-for (let i = 0; i < taskMark.length; i++){
-    taskMark[i].addEventListener("click", function() {
-        taskMark[i].classList.toggle("marked");
-    })
-}
+// for (let i = 0; i < taskMark.length; i++){
+//     taskMark[i].addEventListener("click", function() {
+//         taskMark[i].classList.toggle("marked");
+//     })
+// }
+

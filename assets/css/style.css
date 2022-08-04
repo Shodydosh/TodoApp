@@ -16,7 +16,7 @@
     display: none; /* Hidden by default */
     width: 100%;
     height: 100%; 
-    background-color: #A8B5E0;
+    background-color: #2C3333;
     opacity: 1;
     z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
     transition: 0.7s;
@@ -35,7 +35,7 @@
 }
 
 #overlay h1 {
-    color: white;
+    color: #E7F6F2;
     margin: 40px 20px;
     font-size: 50px;
     transition: 2s;
@@ -52,15 +52,16 @@
 }
 
 #overlay .task-type select{
-    color: #fff;
+    color: #395B64;
     display: block; /*hide original SELECT element: */
-    background-color: #c0d3f3;
+    background-color: #E7F6F2;
     transition: 2s;
     padding: 15px;
-    font-size: 20px;
-    border-radius: 15px;
+    font-size: 25px;
+    border-radius: 25px;
     border: none;
-    width: 320px;
+    height: 100px;
+    width: 500px;
 }
 
 #overlay .task-input {
@@ -68,24 +69,28 @@
 }
 
 #overlay .task-input .text-input{
-    background-color: #c0d3f3;
+    background-color: #E7F6F2;
     border: none;
-    font-size: 20px;
-    padding: 15px;
+    font-size: 25px;
+    padding: 30px;
     border-radius: 15px;
-    color: white;
+    color: #395B64;
     margin-right: 5px;
+    height: 100px;
+    width: 380px;
     /* box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset; */
 }
 
 #overlay .task-input .add-btn {
-    background-color: #c0d3f3;
-    color: white;
+    background-color: #E7F6F2;
+    color: #395B64;
     border: none;
-    font-size: 20px;
+    font-size: 25px;
     padding: 15px;
     border-radius: 15px;
     cursor: pointer;
+    height: 100px;
+    width: 110px;
     box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
 }
 
@@ -115,15 +120,14 @@
     font-size: 25px;
     margin-top: 5px;
     margin-left: 0px;
-    color: #fff;
-    background-color: #A8B5E0;
+    color: #E7F6F2;
+    background-color: #2C3333;
     cursor: pointer;
 }
 
 /* WRAPPER */
 
 .wrapper {
-    transition: margin-left 0.7s;
     display: flex;
     position: relative;
 }
@@ -136,7 +140,7 @@
     position: fixed;
     width: 0px;
     height: 100%;
-    background: #A8B5E0;
+    background: #2C3333;
     padding: 30px 0;
     display: block;
     transition: 0.7s;
@@ -159,7 +163,7 @@
     color: #fff;
     border: none;
     outline: none;
-    background-color: #A8B5E0;
+    background-color: #2C3333;
     cursor: pointer;
     /* transition: 1s; */
 }
@@ -194,7 +198,6 @@
 }
 
 .wrapper .sidenav ul li:hover{
-    background: #c0d3f3;
     transition: 0.8s;
 }
 
@@ -210,7 +213,7 @@
     outline: none;
     font-size: 25px;
     background-color: #fff;
-    color: #A8B5E0;
+    color: #2C3333;
     cursor: pointer;
 }
 
@@ -237,14 +240,14 @@
     margin-top: 1px;
     font-size: 25px;
     padding: 0px 7px;
-    color: #A8B5E0;
+    color: #2C3333;
 }
 
 .wrapper .main-content {
     width: 100%;
     margin-left: 0px;
     background: #fff;
-    color: #A8B5E0;
+    color: #2C3333;
 }
 
 /* GREETING */
@@ -263,7 +266,7 @@
     margin-top: 10px;
     padding: 5px;
     font-size: 25px;
-    color: #A8B5E0;
+    color: #2C3333;
 }
 
 @keyframes textAppear {
@@ -295,11 +298,17 @@
     width: 50%;
     margin: 10px;
     border-radius: 15px;
-    background-color: #c0d3f3;
     box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
     /* box-shadow: rgba(0, 0, 0, 0.1) 0px 5px 10px, rgba(0, 0, 0, 0.15) 0px 5px 5px; */
 
     /* box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.15) 0px 10px 10px; */
+}
+
+.wrapper .overall-tasks .personal-task {
+    background-color: #7ca4b0;
+}
+.wrapper .overall-tasks .business-task {
+    background-color: #A5C9CA;
 }
 
 .wrapper .overall-tasks .business-task .task-head,
@@ -340,12 +349,19 @@
 
 .overall-tasks .business-task .BT-process-per,
 .overall-tasks .personal-task .PT-process-per {
-    background: black;
     border-radius: 1px;
     height: 2px;
     position: relative;
     animation: fillBars 3s 1;
 }
+
+.overall-tasks .business-task .BT-process-per {
+    background: black;
+}
+.overall-tasks .personal-task .PT-process-per {
+    background: black;
+}
+
 
 @keyframes fillBars {
     from {
@@ -378,8 +394,8 @@
 }
 
 .wrapper .main-content .tasks-list .list-header .new-btn {
-    background-color: #c0d3f3;
-    color: black;
+    background-color: #2C3333;
+    color: #E7F6F2;
     padding: 2px 20px;
     border-radius: 25px;
     border: none;
@@ -417,8 +433,8 @@
     }
 }
 
-.tasks-list .tasks #task {
-    background-color: #c0d3f3;
+.tasks-list .tasks .taskItem {
+    background-color: #A5C9CA;
     padding: 15px;
     display: flex;
     justify-content: space-between;
@@ -429,16 +445,16 @@
     margin-top: 15px;
 }
 
-.tasks-list .tasks #task:hover {
+.tasks-list .tasks .taskItem:hover {
     opacity: 0.8;
     /* cursor: pointer; */
 }
 
-.tasks-list .tasks #task:active {
+.tasks-list .tasks .taskItem:active {
     opacity: 0.9;
 }
 
-.tasks-list .tasks #task .task-content {
+.tasks-list .tasks .taskItem .task-content {
     /* text-decoration: line-through; */
     /* background-color: red; */
     margin-top: 9px;
@@ -451,19 +467,19 @@
 
 .tasks-list .tasks .marked {
     text-decoration: line-through;
-    opacity: 0.4;
+    opacity: 0.6;
 }
 
-.tasks-list .tasks #task .mark-btn,
-.tasks-list .tasks #task .delete-btn {
+.tasks-list .tasks .taskItem .mark-btn,
+.tasks-list .tasks .taskItem .delete-btn {
     border: none;
     outline: none;
-    background-color: #c0d3f3;
+    background-color: #A5C9CA;
     text-decoration: none;
     cursor: pointer;
 }
 
-.tasks-list .tasks #task .actions {
+.tasks-list .tasks .taskItem .actions {
     display: flex;
     justify-content: right;
 }
@@ -501,7 +517,7 @@
     padding: 20px 35px 20px 25px;
     z-index: 2;
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
-    border-left: 4px solid #A8B5E0;
+    border-left: 4px solid #2C3333;
     transition: fadeOut linear 1s 2s;
     /* border-left: 6px solid #fff; */
     /* justify-content: center; */
@@ -572,7 +588,7 @@
     background-color: #fff;
     border-radius: 50%;
     font-size: 20px;
-    color: #A8B5E0;
+    color: #2C3333;
 }
 
 .toast .toast-content .close,
