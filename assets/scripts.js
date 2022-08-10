@@ -123,37 +123,39 @@ function renderTasks(tasks = [], marks = []) {
 
         let marks = getMarkFromLocalStorage()
         // console.log(marks[index].name);
-        if(marks[index].name == '1') {
-            content += `<li>
-                        <div class="taskItem marked" onclick="">
-                            <div class="task-content" id="task-line">
-                            ${task.name}
-                            </div>
-                            <div class="actions">
-                                <div>
-                                    <button class="delete-btn" onclick="deleteTask(${index})">
-                                        <i class="fas fa-xmark">&times</i>
-                                    </button>
+        if(marks[index].name){
+            if(marks[index].name == '1') {
+                content += `<li>
+                            <div class="taskItem marked" onclick="">
+                                <div class="task-content" id="task-line">
+                                ${task.name}
+                                </div>
+                                <div class="actions">
+                                    <div>
+                                        <button class="delete-btn" onclick="deleteTask(${index})">
+                                            <i class="fas fa-xmark">&times</i>
+                                        </button>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    </li>`
-        }
-        else {
-            content += `<li>
-                        <div class="taskItem" onclick="">
-                            <div class="task-content" id="task-line">
-                            ${task.name}
-                            </div>
-                            <div class="actions">
-                                <div>
-                                    <button class="delete-btn" onclick="deleteTask(${index})">
-                                        <i class="fas fa-xmark">&times</i>
-                                    </button>
+                        </li>`
+            }
+            else {
+                content += `<li>
+                            <div class="taskItem" onclick="">
+                                <div class="task-content" id="task-line">
+                                ${task.name}
+                                </div>
+                                <div class="actions">
+                                    <div>
+                                        <button class="delete-btn" onclick="deleteTask(${index})">
+                                            <i class="fas fa-xmark">&times</i>
+                                        </button>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    </li>`
+                        </li>`
+            }
         }
 
     })
