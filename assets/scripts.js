@@ -123,7 +123,7 @@ function renderTasks(tasks = [], marks = []) {
 
         let marks = getMarkFromLocalStorage()
         // console.log(marks[index].name);
-        if(marks[index].name){
+        if(marks[index]){
             if(marks[index].name == '1') {
                 content += `<li>
                             <div class="taskItem marked" onclick="">
