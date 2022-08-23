@@ -126,24 +126,32 @@ function renderTasks(tasks = [], marks = []) {
         if(marks[index]){
             if(marks[index].name == '1') {
                 content += `<li>
-                            <div class="taskItem marked" onclick="">
+                                <div class="taskItem marked" onclick="">
                                 <div class="task-content" id="task-line">
+                                <input 
+                                    type="checkbox"
+                                    onclick=""
+                                />
                                 ${task.name}
                                 </div>
-                                <div class="actions">
-                                    <div>
-                                        <button class="delete-btn" onclick="deleteTask(${index})">
-                                            <i class="fas fa-xmark">&times</i>
-                                        </button>
+                                    <div class="actions">
+                                        <div>
+                                            <button class="delete-btn" onclick="deleteTask(${index})">
+                                                <i class="fas fa-xmark">&times</i>
+                                            </button>
+                                        </div>
+                                        </div>
                                     </div>
-                                </div>
-                            </div>
-                        </li>`
-            }
-            else {
-                content += `<li>
-                            <div class="taskItem" onclick="">
+                                </li>`
+                            }
+                            else {
+                                content += `<li>
+                                <div class="taskItem" onclick="">
                                 <div class="task-content" id="task-line">
+                                <input 
+                                    type="checkbox"
+                                    onclick=""
+                                />
                                 ${task.name}
                                 </div>
                                 <div class="actions">
