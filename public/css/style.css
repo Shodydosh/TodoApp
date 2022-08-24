@@ -374,11 +374,6 @@
 
 /* TASKS LIST */
 
-.wrapper .main-content .tasks-list .no-task {
-    background-color: red;
-    margin-top: 190px;
-}
-
 .wrapper .main-content .tasks-list {
     width: 100%;
     padding: 5px;
@@ -445,9 +440,13 @@
     margin-top: 15px;
 }
 
+.tasks-list .tasks .active-task {
+    font-style: italic;
+    opacity: 0.5;
+}
+
 .tasks-list .tasks .taskItem:hover {
     opacity: 0.8;
-    /* cursor: pointer; */
 }
 
 .tasks-list .tasks .taskItem:active {
@@ -462,7 +461,6 @@
     color: black;
     text-overflow: ellipsis;
     overflow: hidden;
-    cursor: pointer;
 }
 
 .tasks-list .tasks .marked {
@@ -483,6 +481,12 @@
     display: flex;
     justify-content: right;
 }
+/* 
+.mark-btn {
+    font-size: 15px;
+    padding-top: 10px;
+    padding-right: 10px;
+} */
 
 .delete-btn {
     font-size: 30px;
@@ -498,7 +502,7 @@
     opacity: 0.5;
 }
 
-/* TOAST MESSAGE */
+/*! TOAST MESSAGE */
 
 .toast, 
 .toast-delete {

@@ -1,13 +1,8 @@
-// json server module
 const jsonServer = require("json-server");
 const databaseFile = "database.json";
-
-// create a Express server
 const server = jsonServer.create();
-
 const router = jsonServer.router(databaseFile);
 const middlewares = jsonServer.defaults();
-
 const port = process.env.PORT || 3000;
 
 const low = require("lowdb");
