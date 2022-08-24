@@ -175,7 +175,7 @@ const addTodo = async () => {
 
         // kiểm tra xem đã chọn loại task hay chưa
         if (type === 'hide') {
-            alert('Please choose the type of task')
+            alert('Hãy chọn loại công việc')
             return;
         }
 
