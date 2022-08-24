@@ -83,14 +83,32 @@ let getTodos = async () => {
 const renderTasks = arr => {
 
     // count amount of task of each type
-    let personalTasks = 0;
-    let businessTasks = 0;
+    let personalTasks = 0, completePT = 0;
+    let businessTasks = 0, completeBT = 0;
     if (arr.length != 0){
         arr.forEach(task => {
-            if(task.type == "business") businessTasks += 1;
-            else personalTasks += 1;
+            if(task.type == "business") {
+                businessTasks += 1;
+                if(task.status == true) completeBT++;
+            } 
+            else {
+                personalTasks += 1;
+                if(task.status == true) completePT++;
+            }
         });
     }
+    let BTpercent = 0, PTpercent = 0;
+
+    BTpercent = (businessTasks != 0) ? (completeBT / businessTasks) : 1;
+    PTpercent = (personalTasks != 0) ? (completePT / personalTasks) : 1;
+
+    // console.log(BTpercent + " " + PTpercent);
+
+    var BTprocess = document.querySelector(".BT-process-per");
+    BTprocess.style.maxWidth = BTpercent*100+"%";
+    var PTprocess = document.querySelector(".PT-process-per");
+    PTprocess.style.maxWidth = PTpercent*100+"%";
+
     PTAmount.innerText = personalTasks;
     BTAmount.innerText = businessTasks;
 
@@ -106,7 +124,7 @@ const renderTasks = arr => {
     let content = "";
     arr.forEach(task => {
         content += `
-                    <div class="taskItem ${task.status ? "active-task" : ""}">
+                    <div alt="You created this task at ${task.time}" class="taskItem ${task.status ? "active-task" : ""}">
                         <div class="task-content" id="task-line">
                             <input 
                                 class = "check-btn"
@@ -170,6 +188,7 @@ const toggleStatus = async (id) => {
 const addTodo = async () => {
     try {
         // Lấy ra dữ liệu trong ô input
+        let timeDate = getTime();
         let title = todoInputEl.value;
         let type = document.getElementById("task-type").value;
 
@@ -189,7 +208,8 @@ const addTodo = async () => {
         let newTodo = {
             title: title,
             status: false, 
-            type: type
+            type: type,
+            time: timeDate
         }
 
         // Gọi API tạo mới
@@ -218,6 +238,16 @@ todoInputEl.addEventListener("keydown", (event) => {
         addTodo();
     }
 })
+
+function getTime(){
+    var today = new Date();
+    var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
+    var today = new Date();
+    var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+    var dateTime = time+' '+date;
+
+    return dateTime;
+}
 
 getTodos();
 
