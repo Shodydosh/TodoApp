@@ -1,2 +1,2 @@
-# https://shodydosh.github.io/TodoApp/
+# https://todoapp621.herokuapp.com/
 * for mobile devices only
