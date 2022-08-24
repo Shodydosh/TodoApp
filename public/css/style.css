@@ -328,14 +328,14 @@
 .wrapper .overall-tasks .business-task h2,
 .wrapper .overall-tasks .personal-task h2 {
     margin: 5px;
-    font-size: 15px;
+    font-size: 20px;
     font-style: normal;
 }
 
 .wrapper .overall-tasks .business-task .BT-task-amount,
 .wrapper .overall-tasks .personal-task .PT-task-amount {
     margin-left : 5px;
-    font-size: 12px;
+    font-size: 18px;
     opacity: 0.5;
 }
 

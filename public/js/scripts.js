@@ -65,6 +65,8 @@ let btnAddTask = document.getElementById("add-btn")
 let todoInputEl = document.getElementById("text-input");
 let todoListEl = document.querySelector(".tasks")
 
+let PTAmount = document.getElementById("PTnum");
+let BTAmount = document.getElementById("BTnum");
 
 // API lấy danh sách công việc
 let getTodos = async () => {
@@ -79,6 +81,18 @@ let getTodos = async () => {
 }
 
 const renderTasks = arr => {
+
+    // count amount of task of each type
+    let personalTasks = 0;
+    let businessTasks = 0;
+    if (arr.length != 0){
+        arr.forEach(task => {
+            if(task.type == "business") businessTasks += 1;
+            else personalTasks += 1;
+        });
+    }
+    PTAmount.innerText = personalTasks;
+    BTAmount.innerText = businessTasks;
 
     todoListEl.innerHTML = "";
 

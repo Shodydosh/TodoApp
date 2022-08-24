@@ -1,28 +1,10 @@
 {
   "todos": [
     {
-      "title": "3",
+      "title": "1234",
       "status": false,
-      "type": "personal",
-      "id": 3
-    },
-    {
-      "title": "345",
-      "status": false,
-      "type": "personal",
-      "id": 4
-    },
-    {
-      "title": "123",
-      "status": false,
-      "type": "personal",
-      "id": 5
-    },
-    {
-      "title": "543",
-      "status": false,
-      "type": "personal",
-      "id": 6
+      "type": "business",
+      "id": 8
     }
   ]
 }
