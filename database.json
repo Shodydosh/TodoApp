@@ -1,28 +1,28 @@
 {
   "todos": [
     {
-      "title": "task1",
+      "title": "3",
       "status": false,
-      "type": "business",
-      "id": 1
-    },
-    {
-      "title": "task22",
-      "status": true,
-      "type": "business",
+      "type": "personal",
       "id": 3
     },
     {
-      "title": "task333",
-      "status": true,
+      "title": "345",
+      "status": false,
       "type": "personal",
-      "id": 6
+      "id": 4
     },
     {
-      "title": "task4444",
+      "title": "123",
       "status": false,
-      "type": "business",
-      "id": 7
+      "type": "personal",
+      "id": 5
+    },
+    {
+      "title": "543",
+      "status": false,
+      "type": "personal",
+      "id": 6
     }
   ]
 }

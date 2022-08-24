@@ -1,7 +1,7 @@
 //! Chức năng
 //! 1. Thêm công việc + loại công việc 
-//! 3. Xóa công việc
-//! 5. Thay đổi trạng thái công việc
+//! 2. Xóa công việc
+//! 3. Thay đổi trạng thái công việc
 
 // SIDENAV OPEN&CLOSE
 
@@ -28,9 +28,39 @@ function off() {
     document.getElementById("overlay").style.display = "none";
 }
 
-// #overlay .task-sinput .text-input{
+// Toast msg
+const toastAdd = document.querySelector('.toast')
+const closeAddToastBtn = document.querySelector('.close')
 
-// truy cap
+const toastDelete = document.querySelector('.toast-delete')
+const closeDeleteToastBtn = document.querySelector('.delete-close')
+
+function toastDeleteMsg(){
+    toastDelete.classList.add('active');
+
+    setTimeout(() => {
+        toastDelete.classList.remove('active');
+    }, 3000)
+
+    closeDeleteToastBtn.addEventListener('click', () => {
+        toastDelete.classList.remove('active');
+    })
+}
+
+function toastAddMsg(){
+    toastAdd.classList.add('active');
+    
+    setTimeout(() => {
+        toastAdd.classList.remove('active');
+    }, 3000)
+
+    closeAddToastBtn.addEventListener('click', () => {
+        toastAdd.classList.remove('active');
+    })
+}
+
+
+//! Truy cập 
 let btnAddTask = document.getElementById("add-btn")
 let todoInputEl = document.getElementById("text-input");
 let todoListEl = document.querySelector(".tasks")
@@ -96,6 +126,7 @@ const deleteTask = async (id) => {
         todos = todos.filter(todo => todo.id != id);
 
         // Hiển thị lại trên giao diện
+        toastDeleteMsg()
         renderTasks(todos)
     } catch (error) {
         console.log(error);
@@ -155,6 +186,7 @@ const addTodo = async () => {
 
         renderTasks(todos);
         todoInputEl.value = "";
+        toastAddMsg();
         off();
     } catch (error) {
         console.log(error);
@@ -174,3 +206,4 @@ todoInputEl.addEventListener("keydown", (event) => {
 })
 
 getTodos();
+
