@@ -65,8 +65,11 @@ let btnAddTask = document.getElementById("add-btn")
 let todoInputEl = document.getElementById("text-input");
 let todoListEl = document.querySelector(".tasks")
 
+//! Process bar
 let PTAmount = document.getElementById("PTnum");
 let BTAmount = document.getElementById("BTnum");
+let PTtip = document.querySelector(".PTtooltip");
+let BTtip = document.querySelector(".BTtooltip");
 
 // API lấy danh sách công việc
 let getTodos = async () => {
@@ -111,6 +114,8 @@ const renderTasks = arr => {
 
     PTAmount.innerText = personalTasks;
     BTAmount.innerText = businessTasks;
+    PTtip.innerText = Math.round(PTpercent*100)+"%";
+    BTtip.innerText = Math.round(BTpercent*100)+"%";
 
     todoListEl.innerHTML = "";
 

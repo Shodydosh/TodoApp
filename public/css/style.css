@@ -342,15 +342,16 @@
 .overall-tasks .business-task .BT-process-bar,
 .overall-tasks .personal-task .PT-process-bar {
     background: rgb(255, 255, 255);
-    border-radius: 1px;
     margin: 40px 10px 10px 10px;
-    height: 2px;
+    height: 6px;
+    border-radius: 2px;
 }
 
 .overall-tasks .business-task .BT-process-per,
 .overall-tasks .personal-task .PT-process-per {
     border-radius: 1px;
-    height: 2px;
+    height: 6px;
+    border-radius: 2px;
     position: relative;
     animation: fillBars 3s 1;
 }
@@ -362,7 +363,6 @@
     background: black;
 }
 
-
 @keyframes fillBars {
     from {
         width: 0%;
@@ -370,6 +370,36 @@
     to {
         width: 100%;
     }
+}
+
+.BTtooltip,
+.PTtooltip {
+    width: 34px;
+    text-align: center;
+    color: #fff;
+    position: absolute;
+    right: -13px;
+    background-color: #2C3333;
+    top: -24px;
+    font-size: 10px;
+    font-weight: 500;
+    padding: 3px 5px;
+    padding-top: 5px;
+    border-radius: 3px;
+    /* z-index: 2; */
+}
+
+.BTtooltip::before,
+.PTtooltip::before {
+    content: '';
+    position: absolute;
+    right: 10px;
+    bottom: -8px;
+    height: 8px;
+    width: 8px;
+    /* z-index: 1; */
+    background-color: #2C3333;
+    transform: translateY(-50%) rotate(45deg);
 }
 
 /* TASKS LIST */
