@@ -164,6 +164,7 @@ const deleteTask = async (id) => {
 
         // Hiển thị lại trên giao diện
         toastDeleteMsg()
+        resetTaskAnimation()
         renderTasks(todos)
     } catch (error) {
         console.log(error);
@@ -183,6 +184,8 @@ const toggleStatus = async (id) => {
         await axios.put(`/todos/${id}`, todo);
 
         // Hiển thị lên trên giao diện
+        if(todo.type == "business") resetBTAnimation();
+        else resetPTAnimation();
         renderTasks(todos);
     } catch (error) {
         console.log(error);
@@ -252,6 +255,20 @@ function getTime(){
     var dateTime = time+' '+date;
 
     return dateTime;
+}
+
+function resetPTAnimation() {
+    const PT = document.querySelector(".PT-process-per");
+    PT.style.animation = "none";
+    PT.offsetHeight;
+    PT.style.animation = null;
+}
+
+function resetBTAnimation() {
+    const BT = document.querySelector(".BT-process-per");
+    BT.style.animation = "none";
+    BT.offsetHeight;
+    BT.style.animation = null;
 }
 
 getTodos();
