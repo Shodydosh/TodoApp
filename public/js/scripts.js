@@ -164,7 +164,6 @@ const deleteTask = async (id) => {
 
         // Hiển thị lại trên giao diện
         toastDeleteMsg()
-        resetTaskAnimation()
         renderTasks(todos)
     } catch (error) {
         console.log(error);
