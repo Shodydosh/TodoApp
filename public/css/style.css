@@ -9,6 +9,49 @@
     font-family: 'JoseFin Sans', sans-serif;
 }
 
+/* WAVE */
+  
+.box {
+position: absolute;
+top: -25%;
+transform: rotate(80deg);
+left: 50%;
+}
+
+.wave {
+position: absolute;
+opacity: 0.4;
+width: 1200px;
+height: 1000px;
+border-radius: 43%;
+}
+
+.wave.one {
+animation: rotate 14000ms infinite linear;
+opacity: 0.1;
+background: #E7F6F2;
+}
+
+.wave.two {
+animation: rotate 7000ms infinite linear;
+opacity: 0.1;
+background: #E7F6F2;
+}
+
+.wave.three {
+animation: rotate 15000ms infinite linear;
+background: #E7F6F2;
+}
+
+@keyframes rotate {
+    from {
+      transform: rotate(0deg);
+    }
+    from {
+      transform: rotate(360deg);
+    }
+}
+
 /* OVERLAY  */
 
 #overlay {
