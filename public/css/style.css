@@ -583,7 +583,6 @@
 
 .toast,
 .toast-delete{
-    /* transform: translateX(calc(100% + 30px)); */
     transition-delay: 2s;
     animation: toastAppear 1s 1, fadeOut linear 1s 2s;
     display: none;
