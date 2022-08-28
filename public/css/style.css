@@ -211,7 +211,7 @@
 .wrapper .sidebar-btn .goto-btn {
     border: none;
     outline: none;
-    font-size: 25px;
+    font-size: 50px;
     background-color: #fff;
     color: #2C3333;
     cursor: pointer;
@@ -227,7 +227,7 @@
     justify-content: space-between;
     font-size: 18px;
     padding: 5px 5px;
-    padding-left: 10px;
+    padding-left: 20px;
     padding-top: 10px;
 }
 
@@ -238,8 +238,8 @@
 
 .wrapper .topnav .topnav-btn .fas {
     margin-top: 1px;
-    font-size: 25px;
-    padding: 0px 7px;
+    font-size: 40px;
+    padding: 5px 15px;
     color: #2C3333;
 }
 
@@ -258,7 +258,7 @@
     padding: 10px;
     margin: 30px 5px;
     margin-bottom: 50px;
-    font-size: 25px;
+    font-size: 35px;
 }
 
 .wrapper .categories {
@@ -465,8 +465,17 @@
     }
 }
 
-.tasks-list .tasks .taskItem {
+.tasks-list .tasks .PT-task{
+    background-color: #7ca4b0;
+}
+
+.tasks-list .tasks .BT-task{
     background-color: #A5C9CA;
+}
+
+.tasks-list .tasks .taskItem {
+    /* background-color: #A5C9CA; */
+    /* background-color: red; */
     padding: 15px;
     display: flex;
     justify-content: space-between;
@@ -477,10 +486,23 @@
     margin-top: 15px;
 }
 
+.tasks-list .tasks .taskItem .PT-delete-btn  {
+    background-color: #7ca4b0;
+}
+.tasks-list .tasks .taskItem .BT-delete-btn {
+    background-color: #A5C9CA;
+}
 .tasks-list .tasks .active-task {
     font-style: italic;
-    opacity: 0.5;
+    background-color: #EAEBED;
+    opacity: 0.8;
 }
+
+.tasks-list .tasks .active-task .PT-delete-btn,
+.tasks-list .tasks .active-task .BT-delete-btn {
+    background-color: #EAEBED;
+}
+
 
 .tasks-list .tasks .taskItem:hover {
     opacity: 0.8;
@@ -493,7 +515,7 @@
 .tasks-list .tasks .taskItem .task-content {
     /* text-decoration: line-through; */
     /* background-color: red; */
-    margin-top: 9px;
+    margin-top: 15px;
     font-size: 20px;
     color: black;
     text-overflow: ellipsis;
@@ -502,14 +524,12 @@
 
 .tasks-list .tasks .marked {
     text-decoration: line-through;
-    opacity: 0.6;
+    opacity: 0.3;
 }
 
-.tasks-list .tasks .taskItem .mark-btn,
 .tasks-list .tasks .taskItem .delete-btn {
     border: none;
     outline: none;
-    background-color: #A5C9CA;
     text-decoration: none;
     cursor: pointer;
 }
@@ -518,15 +538,9 @@
     display: flex;
     justify-content: right;
 }
-/* 
-.mark-btn {
-    font-size: 15px;
-    padding-top: 10px;
-    padding-right: 10px;
-} */
 
 .delete-btn {
-    font-size: 30px;
+    font-size: 40px;
     font-weight: 200;
     font-style: bold;
     padding-top: 1px;

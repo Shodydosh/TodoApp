@@ -129,7 +129,7 @@ const renderTasks = arr => {
     let content = "";
     arr.forEach(task => {
         content += `
-                    <div alt="You created this task at ${task.time}" class="taskItem ${task.status ? "active-task" : ""}">
+                    <div alt="You created this task at ${task.time}" class="taskItem ${task.status ? "active-task" : "" } ${task.type == "personal" ? "PT-task" : "BT-task"}">
                         <div class="task-content" id="task-line">
                             <input 
                                 class = "check-btn"
@@ -140,7 +140,7 @@ const renderTasks = arr => {
                         </div>
                         <div class="actions">
                             <div>
-                                <button class="delete-btn" onclick="deleteTask(${task.id})">
+                                <button class="delete-btn ${task.type == "personal" ? "PT-delete-btn" : "BT-delete-btn"}" onclick="deleteTask(${task.id})">
                                     <i class="fas fa-xmark">&times</i>
                                 </button>
                             </div>
