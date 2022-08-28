@@ -45,10 +45,15 @@
     padding-right: ;
 } */
 
+#overlay .type-selector {
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
 #overlay .task-type {
-    margin: 0px 20px;
     position: relative;
     display: inline-block;
+    width: 100%;
 }
 
 #overlay .task-type select{
@@ -61,10 +66,15 @@
     border-radius: 25px;
     border: none;
     height: 100px;
-    width: 500px;
+    width: 100%;
+}
+#overlay .task-type .choice{
+    font-size: 25px;
 }
 
 #overlay .task-input {
+    margin-left: 20px;
+    margin-right: 20px;
     margin: 20px;
 }
 
@@ -75,13 +85,15 @@
     padding: 30px;
     border-radius: 15px;
     color: #395B64;
-    margin-right: 5px;
     height: 100px;
-    width: 380px;
+    width: 100%;
     /* box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset; */
 }
 
 #overlay .task-input .add-btn {
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
     background-color: #E7F6F2;
     color: #395B64;
     border: none;
@@ -179,6 +191,7 @@
 
 .wrapper .sidenav .profile .profile-icon {
     font-size: 100px;
+    margin-bottom: 30px;
 }
 
 .wrapper .sidenav ul li {

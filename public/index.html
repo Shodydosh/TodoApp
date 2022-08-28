@@ -51,13 +51,15 @@
     <div id="overlay">
         <h1>What have you planned recently?</h1>
         
-        <label class="task-type">     
-            <select id="task-type">
-                <option class="choice" value="hide"> Type of task </option>
-                <option class="choice" value="personal"> Personal </option>
-                <option class="choice" value="business"> Business </option>
-            </select>
-        </label>
+        <div class="type-selector">
+            <label class="task-type">     
+                <select id="task-type">
+                    <option class="choice" value="hide"> Type of task </option>
+                    <option class="choice" value="personal"> Personal </option>
+                    <option class="choice" value="business"> Business </option>
+                </select>
+            </label>
+        </div>
 
         <div class="task-input">
             <input class="text-input" id="text-input" type="text" placeholder="Type here...">
