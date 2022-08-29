@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/Shodydosh/TodoApp#readme",
   "dependencies": {
-    "json-server": "^0.17.0"
+    "json-server": "^0.17.0",
+    "pretty-checkbox": "^3.0.3"
   }
 }
